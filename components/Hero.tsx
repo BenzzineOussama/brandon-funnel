@@ -677,12 +677,6 @@ export default function Hero() {
                     duration: 0.3
                   }
                 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                  duration: 0.3
-                }}
                 className="text-center relative group cursor-pointer"
                 style={{ 
                   transformStyle: 'preserve-3d',

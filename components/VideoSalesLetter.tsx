@@ -372,7 +372,7 @@ export default function VideoSalesLetter() {
                 >
                   {/* Video Thumbnail - will show frame from video */}
                   <video
-                    src="/brandon-message.mp4#t=60"
+                    src="/brandon-funnel/brandon-message.mp4#t=60"
                     className="absolute inset-0 w-full h-full object-cover"
                     muted
                   />
@@ -459,8 +459,8 @@ export default function VideoSalesLetter() {
                 <video
                   ref={videoRef}
                   className="w-full h-full cursor-pointer"
-                  src="/brandon-message.mp4"
-                  poster="/brandon-message.mp4#t=60"
+                  src="/brandon-funnel/brandon-message.mp4"
+                  poster="/brandon-funnel/brandon-message.mp4#t=60"
                   muted={isMuted}
                   onClick={togglePlay}
                 >
