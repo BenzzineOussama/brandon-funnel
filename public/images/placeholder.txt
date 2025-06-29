@@ -1,0 +1,43 @@
+This directory should contain:
+
+1. Brandon's Images:
+   - brandon-hero.jpg (hero background)
+   - brandon-profile.jpg (profile photo)
+   - brandon-olympia.jpg (competition photos)
+
+2. Transformation Images:
+   - before-after-1.jpg
+   - before-after-2.jpg
+   - before-after-3.jpg
+   - before-after-4.jpg
+   - before-after-5.jpg
+
+3. Program Assets:
+   - workout-preview.jpg
+   - nutrition-guide.jpg
+   - supplement-guide.jpg
+   - mindset-training.jpg
+
+4. Trust Badges:
+   - secure-checkout.png
+   - money-back-guarantee.png
+   - ssl-secure.png
+
+5. Payment Logos:
+   - visa.png
+   - mastercard.png
+   - amex.png
+   - paypal.png
+
+6. Brand Logos:
+   - mens-health.png
+   - muscle-fitness.png
+   - flex-magazine.png
+   - bodybuilding-com.png
+
+7. Videos:
+   - brandon-hero-video.mp4 (background video)
+   - vsl-main.mp4 (video sales letter)
+
+Note: All images should be optimized for web use.
+Recommended formats: WebP with JPG/PNG fallbacks
