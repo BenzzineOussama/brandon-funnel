@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValue, useSpring } from 'framer-motion'
 import { Play, Volume2, Maximize2, Pause, VolumeX, CheckCircle, Star, TrendingUp, Sparkles } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+import { getAssetPath } from '@/utils/assetPath'
 
 export default function VideoSalesLetter() {
   const [isPlaying, setIsPlaying] = useState(false)
@@ -211,10 +212,10 @@ export default function VideoSalesLetter() {
 
         {/* Morphing gradient blobs */}
         <motion.div
-          className="absolute top-0 left-0 w-96 h-96 bg-champion-gold/5 rounded-full blur-3xl"
+          className="absolute top-0 left-0 w-48 h-48 md:w-64 md:h-64 lg:w-96 lg:h-96 bg-champion-gold/5 rounded-full blur-3xl"
           animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
+            x: [0, 50, 0],
+            y: [0, -25, 0],
             scale: [1, 1.2, 1],
             rotate: [0, 180, 360],
           }}
@@ -225,10 +226,10 @@ export default function VideoSalesLetter() {
           }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 w-96 h-96 bg-champion-gold/5 rounded-full blur-3xl"
+          className="absolute bottom-0 right-0 w-48 h-48 md:w-64 md:h-64 lg:w-96 lg:h-96 bg-champion-gold/5 rounded-full blur-3xl"
           animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
+            x: [0, -50, 0],
+            y: [0, 25, 0],
             scale: [1, 0.8, 1],
             rotate: [360, 180, 0],
           }}
@@ -269,7 +270,7 @@ export default function VideoSalesLetter() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 bg-champion-gold/10 border border-champion-gold/30 rounded-full px-4 py-2 mb-6 relative"
+              className="inline-flex items-center gap-2 bg-champion-gold/10 border border-champion-gold/30 rounded-full px-3 py-1.5 md:px-4 md:py-2 mb-4 md:mb-6 relative text-xs md:text-sm"
             >
               {/* Animated sparkles */}
               <motion.div
@@ -277,7 +278,7 @@ export default function VideoSalesLetter() {
                 animate={{ rotate: 360, scale: [1, 1.2, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <Sparkles className="w-4 h-4 text-champion-gold" />
+                <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-champion-gold" />
               </motion.div>
               
               <motion.div
@@ -285,7 +286,7 @@ export default function VideoSalesLetter() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="w-2 h-2 bg-champion-gold rounded-full"
               />
-              <span className="text-champion-gold font-medium text-sm uppercase tracking-wider">
+              <span className="text-champion-gold font-medium uppercase tracking-wider">
                 Personal Message from Brandon
               </span>
             </motion.div>
@@ -372,7 +373,7 @@ export default function VideoSalesLetter() {
                 >
                   {/* Video Thumbnail - will show frame from video */}
                   <video
-                    src="/brandon-funnel/brandon-message.mp4#t=60"
+                    src={`${getAssetPath('brandon-message.mp4')}#t=60`}
                     className="absolute inset-0 w-full h-full object-cover"
                     muted
                   />
@@ -409,14 +410,14 @@ export default function VideoSalesLetter() {
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 90 }}
                       whileTap={{ scale: 0.95 }}
-                      className="relative w-24 h-24 bg-gradient-gold rounded-full flex items-center justify-center shadow-2xl"
+                      className="relative w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gradient-gold rounded-full flex items-center justify-center shadow-2xl"
                       animate={{
                         boxShadow: isHovered 
                           ? "0 0 60px rgba(255, 215, 0, 0.6)" 
                           : "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
                       }}
                     >
-                      <Play className="w-10 h-10 text-champion-black ml-1" fill="currentColor" />
+                      <Play className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 text-champion-black ml-0.5 md:ml-1" fill="currentColor" />
                     </motion.div>
                   </div>
                   
@@ -429,9 +430,9 @@ export default function VideoSalesLetter() {
                       y: isHovered ? -5 : 0,
                     }}
                     transition={{ delay: 0.5, y: { duration: 0.3 } }}
-                    className="absolute top-4 left-4 bg-champion-black/80 backdrop-blur-sm rounded-lg px-3 py-1.5"
+                    className="absolute top-2 left-2 md:top-4 md:left-4 bg-champion-black/80 backdrop-blur-sm rounded-lg px-2 py-1 md:px-3 md:py-1.5"
                   >
-                    <span className="text-sm font-medium">Personal Message</span>
+                    <span className="text-xs md:text-sm font-medium">Personal Message</span>
                   </motion.div>
                   
                   {/* Video title overlay with slide-up effect */}
@@ -442,12 +443,12 @@ export default function VideoSalesLetter() {
                       y: isHovered ? -10 : 0 
                     }}
                     transition={{ delay: 0.6, y: { duration: 0.3 } }}
-                    className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-champion-black/90 to-transparent"
+                    className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6 bg-gradient-to-t from-champion-black/90 to-transparent"
                   >
-                    <h3 className="text-xl font-montserrat font-bold mb-2">
+                    <h3 className="text-base md:text-lg lg:text-xl font-montserrat font-bold mb-1 md:mb-2">
                       Why I Created This Program For You
                     </h3>
-                    <p className="text-gray-300 text-sm">
+                    <p className="text-gray-300 text-xs md:text-sm">
                       Brandon Hendrickson - 3x Mr. Olympia Men's Physique Champion
                     </p>
                   </motion.div>
@@ -459,8 +460,8 @@ export default function VideoSalesLetter() {
                 <video
                   ref={videoRef}
                   className="w-full h-full cursor-pointer"
-                  src="/brandon-funnel/brandon-message.mp4"
-                  poster="/brandon-funnel/brandon-message.mp4#t=60"
+                  src={getAssetPath('brandon-message.mp4')}
+                  poster={`${getAssetPath('brandon-message.mp4')}#t=60`}
                   muted={isMuted}
                   onClick={togglePlay}
                 >
